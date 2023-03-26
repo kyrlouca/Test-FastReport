@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/22/2023 15:35:41" ReportInfo.Modified="03/24/2023 10:53:48" ReportInfo.CreatorVersion="2023.2.3.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection1" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDaxnziWlK66EspBgpTGX+aFIJO9AfdxnbQMKB/7B8aT5l/fS//Xk6X92Gv2ITQtEFYPRmx9TYMgODJ1hwKTmKjlyJioD9I7gQbAdFsLd7Gd6NpyVlPxVFhaGAQy4w56E1VQ==">
+      <TableDataSource Name="Table" Alias="Ops" DataType="System.Int32" Enabled="true" SelectCommand="SELECT F.FundId, F.FundType, F.FundTypeId, F.FundCategoryId&#13;&#10;FROM &quot;Fund&quot; F&#13;&#10;">
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="FundType" DataType="System.String"/>
+        <Column Name="FundTypeId" DataType="System.Int32"/>
+        <Column Name="FundCategoryId" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <MsSqlDataConnection Name="EforosClean" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDaxnziWlK66EspBgpTGX+aFIJO9AfdxnbQMKB/7B8aT5l/fS//Xk6X92Gv2ITQtEFYPRmx9TYMgODJ1hwKTmKjlyJioD9I7gQbAdFsLd7Gd6NwtL93B5T401xcb0O3ifEjA==">
+      <TableDataSource Name="FundCommittee" DataType="System.Int32" Enabled="true" TableName="FundCommittee">
+        <Column Name="FundCommitteeId" DataType="System.Int32"/>
+        <Column Name="FundCommitteeTitle" DataType="System.String"/>
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="StartDate" DataType="System.DateTime"/>
+        <Column Name="EndDate" DataType="System.DateTime"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Fund" DataType="System.Int32" Enabled="true" TableName="Fund">
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="EST" DataType="System.String"/>
+        <Column Name="FundType" DataType="System.String"/>
+        <Column Name="FundTypeId" DataType="System.Int32"/>
+        <Column Name="FundCategory" DataType="System.String"/>
+        <Column Name="FundCategoryId" DataType="System.Int32"/>
+        <Column Name="FundName" DataType="System.String"/>
+        <Column Name="Contact_Person" DataType="System.String"/>
+        <Column Name="ContactPersonId" DataType="System.String"/>
+        <Column Name="ContactPersonPosition" DataType="System.String"/>
+        <Column Name="AddressStreet" DataType="System.String"/>
+        <Column Name="AddressPostCode" DataType="System.String"/>
+        <Column Name="AddressCity" DataType="System.String"/>
+        <Column Name="AddressBoxNumber" DataType="System.String"/>
+        <Column Name="AddressBoxCode" DataType="System.String"/>
+        <Column Name="Telephone_1" DataType="System.String"/>
+        <Column Name="Telephone_2" DataType="System.String"/>
+        <Column Name="Telephone_3" DataType="System.String"/>
+        <Column Name="Fax_1" DataType="System.String"/>
+        <Column Name="Fax_2" DataType="System.String"/>
+        <Column Name="Mobile_1" DataType="System.String"/>
+        <Column Name="Email_1" DataType="System.String"/>
+        <Column Name="isActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="FundId_Access" DataType="System.Int32"/>
+        <Column Name="RegistrationDate" DataType="System.DateTime"/>
+        <Column Name="EstablishmentDate" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="Member" DataType="System.Int32" Enabled="true" TableName="Member">
+        <Column Name="MemberId" DataType="System.Int32"/>
+        <Column Name="A_AA" DataType="System.Int32"/>
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="Capacity" DataType="System.String"/>
+        <Column Name="Capacity_AC" DataType="System.String"/>
+        <Column Name="NationalIdentity" DataType="System.Int32"/>
+        <Column Name="NameGreek" DataType="System.String"/>
+        <Column Name="NameEnglish" DataType="System.String"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="AddressPostCode" DataType="System.Int32"/>
+        <Column Name="AddressCity" DataType="System.String"/>
+        <Column Name="PhoneFixed" DataType="System.Int32"/>
+        <Column Name="PhoneMobile" DataType="System.Int32"/>
+        <Column Name="FaxNumber" DataType="System.Int32"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="IsCredible" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsSeminarAttendance" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="DateSeminar" DataType="System.DateTime"/>
+        <Column Name="MidChangeDate" DataType="System.DateTime"/>
+        <Column Name="SSMA_TimeStamp" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Table1" Alias="FundSql" DataType="System.Int32" Enabled="true" SelectCommand="SELECT F.FundId, F.FundName&#13;&#10;FROM &quot;Fund&quot; F&#13;&#10;">
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="FundName" DataType="System.String"/>
+      </TableDataSource>
+      <TableDataSource Name="FundCommitteeMember" DataType="System.Int32" Enabled="true" TableName="FundCommitteeMember">
+        <Column Name="FundCommitteMemberId" DataType="System.Int32"/>
+        <Column Name="FundCommitteId" DataType="System.Int32"/>
+        <Column Name="MemberId" DataType="System.Int32"/>
+        <Column Name="StartDate" DataType="System.DateTime"/>
+        <Column Name="EndDate" DataType="System.DateTime"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsInitial" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="MemberPosition" DataType="System.String"/>
+        <Column Name="MemberPositionId" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <TableDataSource Name="Categories" ReferenceName="NorthWind.Categories" DataType="System.Int32" Enabled="true">
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="CategoryName" DataType="System.String"/>
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="Picture" DataType="System.Byte[]" BindableControl="Picture"/>
+    </TableDataSource>
+    <TableDataSource Name="Customers" ReferenceName="NorthWind.Customers" DataType="System.Int32" Enabled="true">
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ContactName" DataType="System.String"/>
+      <Column Name="ContactTitle" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Employees" ReferenceName="NorthWind.Employees" DataType="System.Int32" Enabled="true">
+      <Column Name="EmployeeID" DataType="System.Int32"/>
+      <Column Name="LastName" DataType="System.String"/>
+      <Column Name="FirstName" DataType="System.String"/>
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="TitleOfCourtesy" DataType="System.String"/>
+      <Column Name="BirthDate" DataType="System.DateTime"/>
+      <Column Name="HireDate" DataType="System.DateTime"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="HomePhone" DataType="System.String"/>
+      <Column Name="Extension" DataType="System.String"/>
+      <Column Name="Photo" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="Notes" DataType="System.String"/>
+      <Column Name="ReportsTo" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Order Details" ReferenceName="NorthWind.Order Details" DataType="System.Int32" Enabled="true">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Quantity" DataType="System.Int16"/>
+      <Column Name="Discount" DataType="System.Single"/>
+    </TableDataSource>
+    <TableDataSource Name="Orders" ReferenceName="NorthWind.Orders" DataType="System.Int32" Enabled="true">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="EmployeeID" DataType="System.Int32"/>
+      <Column Name="OrderDate" DataType="System.DateTime"/>
+      <Column Name="RequiredDate" DataType="System.DateTime"/>
+      <Column Name="ShippedDate" DataType="System.DateTime"/>
+      <Column Name="ShipVia" DataType="System.Int32"/>
+      <Column Name="Freight" DataType="System.Decimal"/>
+      <Column Name="ShipName" DataType="System.String"/>
+      <Column Name="ShipAddress" DataType="System.String"/>
+      <Column Name="ShipCity" DataType="System.String"/>
+      <Column Name="ShipRegion" DataType="System.String"/>
+      <Column Name="ShipPostalCode" DataType="System.String"/>
+      <Column Name="ShipCountry" DataType="System.String"/>
+      <Column Name="Latitude" DataType="System.Double"/>
+      <Column Name="Longitude" DataType="System.Double"/>
+    </TableDataSource>
+    <TableDataSource Name="Products" ReferenceName="NorthWind.Products" DataType="System.Int32" Enabled="true">
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="QuantityPerUnit" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="UnitsInStock" DataType="System.Int16"/>
+      <Column Name="UnitsOnOrder" DataType="System.Int16"/>
+      <Column Name="ReorderLevel" DataType="System.Int16"/>
+      <Column Name="Discontinued" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="EAN13" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Shippers" ReferenceName="NorthWind.Shippers" DataType="System.Int32" Enabled="true">
+      <Column Name="ShipperID" DataType="System.Int32"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Suppliers" ReferenceName="NorthWind.Suppliers" DataType="System.Int32" Enabled="true">
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ContactName" DataType="System.String"/>
+      <Column Name="ContactTitle" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+      <Column Name="HomePage" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="MatrixDemo" ReferenceName="NorthWind.MatrixDemo" DataType="System.Int32" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="Year" DataType="System.Int32"/>
+      <Column Name="Month" DataType="System.Int32"/>
+      <Column Name="ItemsSold" DataType="System.Int32"/>
+      <Column Name="Revenue" DataType="System.Decimal"/>
+    </TableDataSource>
+    <TableDataSource Name="Unicode" ReferenceName="NorthWind.Unicode" DataType="System.Int32" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="UnicodeName" DataType="System.String"/>
+      <Column Name="Text" DataType="System.String"/>
+      <Column Name="Rtl" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="Active" DataType="System.Boolean" BindableControl="CheckBox"/>
+    </TableDataSource>
+    <BusinessObjectDataSource Name="Categories BusinessObject" ReferenceName="Categories BusinessObject" DataType="System.Collections.Generic.List`1[[DemoNew.DemoModel.Model+Category, Demo New, Version=2023.2.3.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="Description" DataType="System.String"/>
+      <BusinessObjectDataSource Name="Products1" Alias="Products" DataType="System.Collections.Generic.List`1[[DemoNew.DemoModel.Model+Product, Demo New, Version=2023.2.3.0, Culture=neutral, PublicKeyToken=null]]" PropName="Products" Enabled="true">
+        <Column Name="Name" DataType="System.String"/>
+        <Column Name="UnitPrice" DataType="System.Decimal"/>
+      </BusinessObjectDataSource>
+    </BusinessObjectDataSource>
+    <Relation Name="CategoriesProducts" ReferenceName="NorthWind.CategoriesProducts" ParentDataSource="Categories" ChildDataSource="Products" ParentColumns="CategoryID" ChildColumns="CategoryID" Enabled="true"/>
+    <Relation Name="SuppliersProducts" ReferenceName="NorthWind.SuppliersProducts" ParentDataSource="Suppliers" ChildDataSource="Products" ParentColumns="SupplierID" ChildColumns="SupplierID" Enabled="true"/>
+    <Relation Name="CustomersOrders" ReferenceName="NorthWind.CustomersOrders" ParentDataSource="Customers" ChildDataSource="Orders" ParentColumns="CustomerID" ChildColumns="CustomerID" Enabled="true"/>
+    <Relation Name="ShippersOrders" ReferenceName="NorthWind.ShippersOrders" ParentDataSource="Shippers" ChildDataSource="Orders" ParentColumns="ShipperID" ChildColumns="ShipVia" Enabled="true"/>
+    <Relation Name="EmployeesOrders" ReferenceName="NorthWind.EmployeesOrders" ParentDataSource="Employees" ChildDataSource="Orders" ParentColumns="EmployeeID" ChildColumns="EmployeeID" Enabled="true"/>
+    <Relation Name="ProductsOrderDetails" ReferenceName="NorthWind.ProductsOrderDetails" ParentDataSource="Products" ChildDataSource="Order Details" ParentColumns="ProductID" ChildColumns="ProductID" Enabled="true"/>
+    <Relation Name="OrdersOrderDetails" ReferenceName="NorthWind.OrdersOrderDetails" ParentDataSource="Orders" ChildDataSource="Order Details" ParentColumns="OrderID" ChildColumns="OrderID" Enabled="true"/>
+    <Relation Name="Fund_FundCommittee" ParentDataSource="Fund" ChildDataSource="FundCommittee" ParentColumns="FundTypeId" ChildColumns="FundCommitteeId" Enabled="true"/>
+    <Relation Name="FundCommittee_FundCommitteeMember" ParentDataSource="FundCommittee" ChildDataSource="FundCommitteeMember" ParentColumns="FundCommitteeId" ChildColumns="FundCommitteId" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5">
+      <TextObject Name="Text1" Top="9.45" Width="699.3" Height="56.7" Text="Title" HorzAlign="Center" Font="Cascadia Code, 26pt, style=Bold"/>
+      <TextObject Name="Text2" Text="[Fund.FundId]" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="98.5" Width="718.2" Height="349.65" DataSource="Fund">
+      <RichObject Name="Rich1" Left="18.9" Top="47.25" Width="661.5" Height="141.75" Text="{\rtf1\ansi\ansicpg1253\deff0\nouicompat\deflang1032{\fonttbl{\f0\fswiss\fprq2\fcharset161 Verdana;}{\f1\fswiss\fprq2\fcharset0 Verdana;}{\f2\fnil\fcharset161 Tahoma;}}&#13;&#10;{\colortbl ;\red0\green0\blue0;}&#13;&#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &#13;&#10;\pard\widctlpar\sa140\sl288\slmult1\qj\cf1\f0\fs20 Working as DHL external consultant and analyst for their local clearning sytem (CAB). I had designed, developed and currently maintain seven\~software modules which automated DHL Cyprus localized \b [Fund.FundName]\f1\lang1033  \b0\f0\lang1032 Customs Clearing processes for incoming and outgoing packages. The systems provide functionality for applying local tariffs, invoicing customers, payments to customs, and interfacing with THESEUS (Cyprus government Customs clearing system). The system has also interfaces with DHL\rquote s global system. \par&#13;&#10;&#13;&#10;\pard\cf0\f2\fs17\par&#13;&#10;}&#13;&#10;"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="452.15" Width="718.2" Height="18.9"/>
+    <OverlayBand Name="Overlay1" Top="475.05" Width="718.2" Height="37.8"/>
+  </ReportPage>
+  <ReportPage Name="Page2" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle2" Width="718.2" Height="37.8" CanGrow="true">
+      <TextObject Name="Text3" Left="945" Text="[Fund.FundName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="945" Text="[Fund.FundName]" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35" Guides="0"/>
+    <DataBand Name="Data2" Top="74.15" Width="718.2" Height="75.6" CanGrow="true" CanShrink="true" DataSource="Fund">
+      <DataBand Name="Data3" Top="153.75" Width="718.2" Height="37.8" Guides="0"/>
+    </DataBand>
+  </ReportPage>
+</Report>

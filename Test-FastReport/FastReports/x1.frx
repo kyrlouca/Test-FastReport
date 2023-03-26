@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<inherited BaseReport="template.frx" BaseReportAbsolutePath="C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\template.frx" ScriptLanguage="CSharp" ReportInfo.Created="03/24/2023 13:03:34" ReportInfo.Modified="03/24/2023 13:48:00" ReportInfo.CreatorVersion="2023.2.3.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDaxnziWlK66EspBgpTGX+aFIJO9AfdxnbQMKB/7B8aT5l/fS//Xk6X92Gv2ITQtEFYPRmx9TYMgODJ1hwKTmKjlyJioD9I7gQbAdFsLd7Gd6NkCWKreEKtCDc9X5RNr9vbA==">
+      <TableDataSource Name="FundCommittee" DataType="System.Int32" Enabled="true" TableName="FundCommittee">
+        <Column Name="FundCommitteeId" DataType="System.Int32"/>
+        <Column Name="FundCommitteeTitle" DataType="System.String"/>
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="StartDate" DataType="System.DateTime"/>
+        <Column Name="EndDate" DataType="System.DateTime"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Fund" DataType="System.Int32" Enabled="true" TableName="Fund">
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="EST" DataType="System.String"/>
+        <Column Name="FundType" DataType="System.String"/>
+        <Column Name="FundTypeId" DataType="System.Int32"/>
+        <TableDataSource Name="FundCategory" DataType="System.String" Enabled="true" TableName="FundCategory"/>
+        <Column Name="FundCategoryId" DataType="System.Int32"/>
+        <Column Name="FundName" DataType="System.String"/>
+        <Column Name="Contact_Person" DataType="System.String"/>
+        <Column Name="ContactPersonId" DataType="System.String"/>
+        <Column Name="ContactPersonPosition" DataType="System.String"/>
+        <Column Name="AddressStreet" DataType="System.String"/>
+        <Column Name="AddressPostCode" DataType="System.String"/>
+        <Column Name="AddressCity" DataType="System.String"/>
+        <Column Name="AddressBoxNumber" DataType="System.String"/>
+        <Column Name="AddressBoxCode" DataType="System.String"/>
+        <Column Name="Telephone_1" DataType="System.String"/>
+        <Column Name="Telephone_2" DataType="System.String"/>
+        <Column Name="Telephone_3" DataType="System.String"/>
+        <Column Name="Fax_1" DataType="System.String"/>
+        <Column Name="Fax_2" DataType="System.String"/>
+        <Column Name="Mobile_1" DataType="System.String"/>
+        <Column Name="Email_1" DataType="System.String"/>
+        <Column Name="isActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="FundId_Access" DataType="System.Int32"/>
+        <Column Name="RegistrationDate" DataType="System.DateTime"/>
+        <Column Name="EstablishmentDate" DataType="System.DateTime"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <inherited Name="Page1">
+    <inherited Name="ReportTitle1">
+      <inherited Name="Text1"/>
+    </inherited>
+    <inherited Name="PageHeader1">
+      <TextObject Name="Text3" ZOrder="0" Left="47.25" Width="94.5" Height="18.9" Text="FundName" Font="Arial, 10pt"/>
+    </inherited>
+    <inherited Name="Data1" DataSource="Fund">
+      <TextObject Name="Text2" ZOrder="0" Left="47.25" Top="28.35" Width="519.75" Height="18.9" Text="[Fund.FundName]" Font="Arial, 10pt"/>
+    </inherited>
+    <inherited Name="PageFooter1"/>
+  </inherited>
+</inherited>

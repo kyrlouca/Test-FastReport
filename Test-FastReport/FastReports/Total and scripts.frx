@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/24/2023 07:59:51" ReportInfo.Modified="03/24/2023 11:46:32" ReportInfo.CreatorVersion="2023.2.3.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Text13_BeforePrint(object sender, EventArgs e)
+    {
+                       
+      if (((Decimal)Report.GetColumnValue(&quot;Product.price&quot;)) &gt; 20)
+        Text13.TextColor = Color.Red;
+    }
+  }
+}
+</ScriptText>
+  <Styles Name="Standard">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDa4Bj1w0R+JVKKm6iyXMeCF2g+eoWw/im8Cuk3bV1ojmVa4yFm9VN0eeOyuFQ5CfUQ7J9A97h1WkiZdCN629U9ZmPXG85Ho60sp+9FTdZAQ1F">
+      <TableDataSource Name="Product" DataType="System.Int32" Enabled="true" TableName="Product">
+        <Column Name="productId" DataType="System.Int32"/>
+        <Column Name="productName" DataType="System.String"/>
+        <Column Name="price" DataType="System.Decimal"/>
+        <Column Name="productCategoryId" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="ProductCategory" DataType="System.Int32" Enabled="true" TableName="ProductCategory">
+        <Column Name="ProductCategoryId" DataType="System.Int32"/>
+        <Column Name="CategoryName" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Total Name="Total" Expression="[Product.price]" Evaluator="Data2" PrintOn="GroupFooter1" ResetOnReprint="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text1" Left="47.25" Width="94.5" Height="18.9" Text="productId" Font="Arial, 10pt"/>
+      <TextObject Name="Text2" Left="160.65" Width="94.5" Height="18.9" Text="productName" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="292.95" Width="94.5" Height="18.9" Text="price" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="18.9" EvenStyle="EvenRows" DataSource="ProductCategory">
+      <TextObject Name="Text11" Left="9.45" Width="94.5" Height="18.9" Text="[ProductCategory.ProductCategoryId]" Font="Arial, 10pt"/>
+      <TextObject Name="Text12" Left="406.35" Width="217.35" Height="18.9" Text="[ProductCategory.CategoryName][ProductCategory.ProductCategoryId]" Font="Arial, 10pt"/>
+      <GroupHeaderBand Name="GroupHeader1" Top="97.05" Width="718.2" Height="37.8" Condition="[Product.productCategoryId]">
+        <DataBand Name="Data2" Top="138.85" Width="718.2" Height="37.8" DataSource="Product">
+          <TextObject Name="Text9" Left="47.25" Width="94.5" Height="18.9" Text="[Product.productId]" Font="Arial, 10pt"/>
+          <TextObject Name="Text10" Left="151.2" Width="94.5" Height="18.9" Text="[Product.productName]" Font="Arial, 10pt"/>
+          <TextObject Name="Text13" Left="292.95" Width="94.5" Height="18.9" BeforePrintEvent="Text13_BeforePrint" Text="[Product.price]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" WordWrap="false" Font="Arial, 10pt" Trimming="EllipsisCharacter"/>
+        </DataBand>
+        <GroupFooterBand Name="GroupFooter1" Top="180.65" Width="718.2" Height="37.8" Border.Lines="Bottom">
+          <TextObject Name="Text15" Left="292.95" Top="9.45" Width="94.5" Height="18.9" Text="[Total]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+        </GroupFooterBand>
+      </GroupHeaderBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="222.45" Width="718.2" Height="18.9">
+      <TextObject Name="Text8" Width="718.2" Height="18.9" Dock="Fill" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

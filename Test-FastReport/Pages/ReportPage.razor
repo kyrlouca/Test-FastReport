@@ -1,0 +1,49 @@
+﻿@page "/report"
+@using FastReport;
+@using FastReport.Data;
+using Microsoft.Data.SqlClient;
+using FastReport.Web;
+using FastReport.Data;
+using FastReport.Utils;
+<h3>ReportPage</h3>
+
+<WebReportContainer WebReport=@MyWebReport />
+
+@code {
+    public WebReport UserWebReport { get; set; }
+    private WebReport MyWebReport { get; set; } = new WebReport();
+    private string directory = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports";
+    private string connectionName = @"Data Source=KYR-RYZEN\SQLEXPRESS;AttachDbFilename=;Initial Catalog=EforosCleaned;Integrated Security=True;Persist Security Info=False;User ID= Tester;Password= fuckinga";
+    protected override void OnParametersSet()
+    {
+
+        var reportName = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\Funds.frx";
+        
+
+        MsSqlDataConnection sqlConnection = new MsSqlDataConnection();
+        
+        sqlConnection.ConnectionString = connectionName;
+        MyWebReport.Report.Dictionary.Connections.Add(sqlConnection);
+        sqlConnection.CreateAllTables();
+        
+        MyWebReport.Report.Load(reportName);        
+        
+        
+        var x = 2;
+       
+              
+        
+        // Registers the application dataset
+        //Report.RegisterData(DataSet, "NorthWind");
+
+        //report1.Load(...);
+        // do it after loading the report, before running it
+        // assume we have one connection in the report
+        //report1.Dictionary.Connections[0].ConnectionString = my_connection_string;
+        //report1.Show();
+
+
+        //UserWebReport = new WebReport();
+        //UserWebReport.Report = report;
+    }
+}

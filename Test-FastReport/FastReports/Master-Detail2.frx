@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" TextQuality="Regular" ReportInfo.Description="Demonstrates a master-detail report. To create it:&#13;&#10;- go to &quot;Report|Configure Bands...&quot; menu;&#13;&#10;- select the existing data band;&#13;&#10;- press the &quot;Add&quot; button and select the &quot;Data&quot; band - this will add a data band to the existing one;&#13;&#10;- return to the report page, doubleclick each data band and set its datasource.&#13;&#10;Note: if you have defined the relation between master and detail tables, FastReport will use it automatically." ReportInfo.Created="01/17/2008 03:55:42" ReportInfo.Modified="03/22/2023 22:14:55" ReportInfo.CreatorVersion="1.0.0.0">
+  <Styles>
+    <Style Name="EvenRows" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <TableDataSource Name="Categories" ReferenceName="NorthWind.Categories" DataType="System.Int32" Enabled="true">
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="CategoryName" DataType="System.String"/>
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="Picture" DataType="System.Byte[]" BindableControl="Picture"/>
+    </TableDataSource>
+    <TableDataSource Name="Products" ReferenceName="NorthWind.Products" DataType="System.Int32" Enabled="true">
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="ProductName" DataType="System.String"/>
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CategoryID" DataType="System.Int32"/>
+      <Column Name="QuantityPerUnit" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="UnitsInStock" DataType="System.Int16"/>
+      <Column Name="UnitsOnOrder" DataType="System.Int16"/>
+      <Column Name="ReorderLevel" DataType="System.Int16"/>
+      <Column Name="Discontinued" DataType="System.Boolean"/>
+      <Column Name="EAN13" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Customers" ReferenceName="NorthWind.Customers" DataType="System.Int32" Enabled="true">
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ContactName" DataType="System.String"/>
+      <Column Name="ContactTitle" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Employees" ReferenceName="NorthWind.Employees" DataType="System.Int32" Enabled="true">
+      <Column Name="EmployeeID" DataType="System.Int32"/>
+      <Column Name="LastName" DataType="System.String"/>
+      <Column Name="FirstName" DataType="System.String"/>
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="TitleOfCourtesy" DataType="System.String"/>
+      <Column Name="BirthDate" DataType="System.DateTime"/>
+      <Column Name="HireDate" DataType="System.DateTime"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="HomePhone" DataType="System.String"/>
+      <Column Name="Extension" DataType="System.String"/>
+      <Column Name="Photo" DataType="System.Byte[]" BindableControl="Picture"/>
+      <Column Name="Notes" DataType="System.String"/>
+      <Column Name="ReportsTo" DataType="System.Int32"/>
+    </TableDataSource>
+    <TableDataSource Name="Order Details" ReferenceName="NorthWind.Order Details" DataType="System.Int32" Enabled="true">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="ProductID" DataType="System.Int32"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Quantity" DataType="System.Int16"/>
+      <Column Name="Discount" DataType="System.Single"/>
+    </TableDataSource>
+    <TableDataSource Name="Orders" ReferenceName="NorthWind.Orders" DataType="System.Int32" Enabled="true">
+      <Column Name="OrderID" DataType="System.Int32"/>
+      <Column Name="CustomerID" DataType="System.String"/>
+      <Column Name="EmployeeID" DataType="System.Int32"/>
+      <Column Name="OrderDate" DataType="System.DateTime"/>
+      <Column Name="RequiredDate" DataType="System.DateTime"/>
+      <Column Name="ShippedDate" DataType="System.DateTime"/>
+      <Column Name="ShipVia" DataType="System.Int32"/>
+      <Column Name="Freight" DataType="System.Decimal"/>
+      <Column Name="ShipName" DataType="System.String"/>
+      <Column Name="ShipAddress" DataType="System.String"/>
+      <Column Name="ShipCity" DataType="System.String"/>
+      <Column Name="ShipRegion" DataType="System.String"/>
+      <Column Name="ShipPostalCode" DataType="System.String"/>
+      <Column Name="ShipCountry" DataType="System.String"/>
+      <Column Name="Latitude" DataType="System.Double"/>
+      <Column Name="Longitude" DataType="System.Double"/>
+    </TableDataSource>
+    <TableDataSource Name="Shippers" ReferenceName="NorthWind.Shippers" DataType="System.Int32" Enabled="true">
+      <Column Name="ShipperID" DataType="System.Int32"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="Suppliers" ReferenceName="NorthWind.Suppliers" DataType="System.Int32" Enabled="true">
+      <Column Name="SupplierID" DataType="System.Int32"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="ContactName" DataType="System.String"/>
+      <Column Name="ContactTitle" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="City" DataType="System.String"/>
+      <Column Name="Region" DataType="System.String"/>
+      <Column Name="PostalCode" DataType="System.String"/>
+      <Column Name="Country" DataType="System.String"/>
+      <Column Name="Phone" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+      <Column Name="HomePage" DataType="System.String"/>
+    </TableDataSource>
+    <TableDataSource Name="MatrixDemo" ReferenceName="NorthWind.MatrixDemo" DataType="System.Int32" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="Year" DataType="System.Int32"/>
+      <Column Name="Month" DataType="System.Int32"/>
+      <Column Name="ItemsSold" DataType="System.Int32"/>
+      <Column Name="Revenue" DataType="System.Decimal"/>
+    </TableDataSource>
+    <TableDataSource Name="Unicode" ReferenceName="NorthWind.Unicode" DataType="System.Int32" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="UnicodeName" DataType="System.String"/>
+      <Column Name="Text" DataType="System.String"/>
+      <Column Name="Rtl" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="Active" DataType="System.Boolean" BindableControl="CheckBox"/>
+    </TableDataSource>
+    <BusinessObjectDataSource Name="Categories BusinessObject" ReferenceName="Categories BusinessObject" DataType="System.Collections.Generic.List`1[[DemoNew.DemoModel.Model+Category, Demo New, Version=2023.2.3.0, Culture=neutral, PublicKeyToken=null]]" Enabled="true">
+      <Column Name="Name" DataType="System.String"/>
+      <Column Name="Description" DataType="System.String"/>
+      <BusinessObjectDataSource Name="Products1" Alias="Products" Enabled="false" DataType="System.Collections.Generic.List`1[[DemoNew.DemoModel.Model+Product, Demo New, Version=2023.2.3.0, Culture=neutral, PublicKeyToken=null]]" PropName="Products"/>
+    </BusinessObjectDataSource>
+    <Relation Name="CategoriesProducts" ReferenceName="NorthWind.CategoriesProducts" ParentDataSource="Categories" ChildDataSource="Products" ParentColumns="CategoryID" ChildColumns="CategoryID" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="0,718.2,160.65,463.05,9.45,151.2,292.95,321.3,444.15,472.5,595.35,661.5,680.4,623.7,614.25,708.75,226.8" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95" CanGrow="true" Guides="66.15,103.95,28.35,56.7,0">
+      <TextObject Name="Text3" Top="66.15" Width="718.2" Height="37.8" CanGrow="true" CanShrink="true" Text="PRODUCT CATALOG" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+      <TextObject Name="Text11" Top="28.35" Width="718.2" Height="28.35" Anchor="Top, Left, Right" Fill.Color="WhiteSmoke" CanGrow="true" CanShrink="true" Text="[Report.ReportInfo.Description]&#13;&#10;" Padding="4, 4, 4, 4" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text18" Width="718.2" Height="28.35" Anchor="Top, Left, Right" Fill.Color="WhiteSmoke" Cursor="Hand" Hyperlink.Value="http://fast.report/e0b07" Hyperlink.OpenLinkInNewTab="true" Text="Learn how to build this report on the Fast Reports Academy channel" VertAlign="Center" Font="Tahoma, 10pt, style=Bold, Underline" TextFill.Color="Blue"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="105.95" Width="718.2" Height="103.95" Fill="Glass" Fill.Color="64, 64, 64" Fill.Blend="0.08" Fill.Hatch="true" Guides="9.449997,47.25,94.5,56.7" DataSource="Categories" KeepDetail="true">
+      <TextObject Name="Text1" Left="160.65" Top="9.45" Width="302.4" Height="37.8" Text="[Categories.CategoryName]" Font="Tahoma, 18pt" TextFill.Color="White"/>
+      <PictureObject Name="Picture1" Left="9.45" Top="9.45" Width="141.75" Height="85.05" Border.Lines="All" Border.Color="Gray" Border.Width="2" DataColumn="Categories.Picture" SizeMode="StretchImage"/>
+      <TextObject Name="Text2" Left="160.65" Top="56.7" Width="302.4" Height="37.8" Text="[Categories.Description]" Font="Tahoma, 8pt" TextFill.Color="White"/>
+      <DataBand Name="Data2" Top="242.25" Width="718.2" Height="18.9" Fill.Color="WhiteSmoke" EvenStyle="EvenRows" Guides="0,18.89999" DataSource="Products">
+        <TextObject Name="Text5" Width="292.95" Height="18.9" Text="[Products.ProductName]" VertAlign="Center" Font="Tahoma, 8pt"/>
+        <TextObject Name="Text7" Left="321.3" Width="122.85" Height="18.9" Text="[Products.UnitPrice]" Format="Currency" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>
+        <TextObject Name="Text9" Left="472.5" Width="122.85" Height="18.9" Text="[Products.UnitsInStock]" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt"/>
+        <CheckBoxObject Name="CheckBox1" Left="661.5" Width="18.9" Height="18.9" DataColumn="Products.Discontinued"/>
+        <DataHeaderBand Name="DataHeader1" Top="211.9" Width="718.2" Height="28.35" Guides="0,28.35001">
+          <TextObject Name="Text6" Width="292.95" Height="28.35" Text="Product name" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+          <TextObject Name="Text8" Left="321.3" Width="122.85" Height="28.35" Text="Unit price" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+          <TextObject Name="Text10" Left="472.5" Width="122.85" Height="28.35" CanGrow="true" CanShrink="true" Text="Units in stock" AutoWidth="true" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+          <TextObject Name="Text12" Left="623.7" Width="94.5" Height="28.35" Text="Discontinued" HorzAlign="Center" VertAlign="Center" Font="Tahoma, 8pt, style=Bold"/>
+        </DataHeaderBand>
+        <DataFooterBand Name="DataFooter1" Top="263.15" Width="718.2" Height="16"/>
+        <Sort>
+          <Sort Expression="[Products.ProductName]"/>
+        </Sort>
+      </DataBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="281.15" Width="718.2" Height="28.35" Fill.Color="WhiteSmoke" Guides="0,28.35001">
+      <TextObject Name="Text4" Left="614.25" Width="94.5" Height="28.35" Text="[PageN]" HorzAlign="Right" VertAlign="Center" Font="Tahoma, 8pt"/>
+      <TextObject Name="Text13" Left="9.45" Width="217.35" Height="28.35" Cursor="Hand" Hyperlink.Value="https://www.fast-report.com/en/product/fast-report-net/" Text="Generated by FastReport .NET" VertAlign="Center" Font="Tahoma, 8pt, style=Underline" TextFill.Color="Blue"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
