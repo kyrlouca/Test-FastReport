@@ -11,6 +11,6 @@
 		<PackageReference Include="FastReport.Core" Version="2021.3.0-demo" />
 		<PackageReference Include="FastReport.Data.MsSql" Version="2019.4.0" />
 		<PackageReference Include="FastReport.Web" Version="2021.3.0-demo" />
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
 	</ItemGroup>
 </Project>

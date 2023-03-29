@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/26/2023 21:49:41" ReportInfo.Modified="03/26/2023 21:54:06" ReportInfo.CreatorVersion="2023.2.3.0">
+  <Styles Name="Standard">
+    <Style Name="Title" Font="Arial, 12pt, style=Bold"/>
+    <Style Name="Header" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Group" Font="Arial, 10pt, style=Bold"/>
+    <Style Name="Data" Font="Arial, 10pt"/>
+    <Style Name="Footer" Font="Arial, 10pt"/>
+    <Style Name="EvenRows" Fill.Color="WhiteSmoke" Font="Arial, 10pt"/>
+  </Styles>
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDa1gXJqKzZX9ShRotuxHxmCBUkBGlBpxBShdS0Lg1kIDz5S9KAh0ZOO6c5YNS5W69Taqdb0ygHvpvhrVjsuSFhISm1QGQzj9PmNN7CBXvqQJQtqqNGwzn4+5nzJGfm+UwDA==">
+      <TableDataSource Name="MessageStatus" DataType="System.Int32" Enabled="true" TableName="MessageStatus">
+        <Column Name="id" DataType="System.Int32"/>
+        <Column Name="StatusEN" DataType="System.String"/>
+        <Column Name="StatusGR" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Width="718.2" Height="37.8" Dock="Fill" Text="MessageStatus" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold" Style="Title"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="37.8">
+      <TextObject Name="Text3" Height="18.9" Text="id" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text5" Height="18.9" Text="StatusEN" Font="Arial, 10pt, style=Bold" Style="Header"/>
+      <TextObject Name="Text7" Height="18.9" Text="StatusGR" Font="Arial, 10pt, style=Bold" Style="Header"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="83.6" Width="718.2" Height="18.9" EvenStyle="EvenRows" DataSource="MessageStatus">
+      <TextObject Name="Text2" Height="18.9" Text="[MessageStatus.id]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text4" Height="18.9" Text="[MessageStatus.StatusEN]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text6" Height="18.9" Text="[MessageStatus.StatusGR]" Font="Arial, 10pt" Style="Data"/>
+      <TextObject Name="Text9" Left="18.9" Width="94.5" Height="18.9" Text="[MessageStatus.id]" Font="Arial, 10pt"/>
+      <TextObject Name="Text11" Left="274.05" Width="94.5" Height="18.9" Text="[MessageStatus.StatusGR]" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Left="141.75" Width="94.5" Height="18.9" Text="[MessageStatus.StatusEN]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="106.5" Width="718.2" Height="18.9">
+      <TextObject Name="Text8" Width="718.2" Height="18.9" Dock="Fill" Text="[PageN]" HorzAlign="Right" Font="Arial, 10pt" Style="Footer"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
