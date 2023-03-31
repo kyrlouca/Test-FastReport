@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/31/2023 18:43:00" ReportInfo.Modified="03/31/2023 18:43:52" ReportInfo.CreatorVersion="2023.2.4.0">
+  <Dictionary/>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="66.15" Top="9.45" Width="94.5" Height="18.9" Text="aaaa" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="47.25"/>
+    <DataBand Name="Data1" Top="93.05" Width="718.2" Height="75.6">
+      <TextObject Name="Text2" Left="28.35" Top="9.45" Width="94.5" Height="18.9" Text="sdefasf" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="172.65" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
