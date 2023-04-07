@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/05/2023 17:25:03" ReportInfo.Modified="04/05/2023 23:05:09" ReportInfo.CreatorVersion="2023.2.4.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDaxnziWlK66EspBgpTGX+aFIJO9AfdxnbQMKB/7B8aT5l/fS//Xk6X92Gv2ITQtEFYPRmx9TYMgODJ1hwKTmKjlyJioD9I7gQbAdFsLd7Gd6N/T0gvklUG2gphMjBF3iVzw==">
+      <TableDataSource Name="FundCommittee" DataType="System.Int32" Enabled="true" TableName="FundCommittee">
+        <Column Name="FundCommitteeId" DataType="System.Int32"/>
+        <Column Name="FundCommitteeTitle" DataType="System.String"/>
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="StartDate" DataType="System.DateTime"/>
+        <Column Name="EndDate" DataType="System.DateTime"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="Fund" DataType="System.Int32" Enabled="true" TableName="Fund">
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="EST" DataType="System.String"/>
+        <Column Name="FundType" DataType="System.String"/>
+        <Column Name="FundTypeId" DataType="System.Int32"/>
+        <Column Name="FundCategory" DataType="System.String"/>
+        <Column Name="FundCategoryId" DataType="System.Int32"/>
+        <Column Name="FundName" DataType="System.String"/>
+        <Column Name="Contact_Person" DataType="System.String"/>
+        <Column Name="ContactPersonId" DataType="System.String"/>
+        <Column Name="ContactPersonPosition" DataType="System.String"/>
+        <Column Name="AddressStreet" DataType="System.String"/>
+        <Column Name="AddressPostCode" DataType="System.String"/>
+        <Column Name="AddressCity" DataType="System.String"/>
+        <Column Name="AddressBoxNumber" DataType="System.String"/>
+        <Column Name="AddressBoxCode" DataType="System.String"/>
+        <Column Name="Telephone_1" DataType="System.String"/>
+        <Column Name="Telephone_2" DataType="System.String"/>
+        <Column Name="Telephone_3" DataType="System.String"/>
+        <Column Name="Fax_1" DataType="System.String"/>
+        <Column Name="Fax_2" DataType="System.String"/>
+        <Column Name="Mobile_1" DataType="System.String"/>
+        <Column Name="Email_1" DataType="System.String"/>
+        <Column Name="isActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="FundId_Access" DataType="System.Int32"/>
+        <Column Name="RegistrationDate" DataType="System.DateTime"/>
+        <Column Name="EstablishmentDate" DataType="System.DateTime"/>
+      </TableDataSource>
+      <TableDataSource Name="Member" DataType="System.Int32" Enabled="true" TableName="Member">
+        <Column Name="MemberId" DataType="System.Int32"/>
+        <Column Name="A_AA" DataType="System.Int32"/>
+        <Column Name="FundId" DataType="System.Int32"/>
+        <Column Name="Capacity" DataType="System.String"/>
+        <Column Name="Capacity_AC" DataType="System.String"/>
+        <Column Name="NationalIdentity" DataType="System.Int32"/>
+        <Column Name="NameGreek" DataType="System.String"/>
+        <Column Name="NameEnglish" DataType="System.String"/>
+        <Column Name="Address" DataType="System.String"/>
+        <Column Name="AddressPostCode" DataType="System.Int32"/>
+        <Column Name="AddressCity" DataType="System.String"/>
+        <Column Name="PhoneFixed" DataType="System.Int32"/>
+        <Column Name="PhoneMobile" DataType="System.Int32"/>
+        <Column Name="FaxNumber" DataType="System.Int32"/>
+        <Column Name="Email" DataType="System.String"/>
+        <Column Name="IsCredible" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsSeminarAttendance" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="DateSeminar" DataType="System.DateTime"/>
+        <Column Name="MidChangeDate" DataType="System.DateTime"/>
+        <Column Name="SSMA_TimeStamp" DataType="System.Byte[]" BindableControl="Picture"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+      </TableDataSource>
+      <TableDataSource Name="FundCommitteeMember" DataType="System.Int32" Enabled="true" TableName="FundCommitteeMember">
+        <Column Name="FundCommitteMemberId" DataType="System.Int32"/>
+        <Column Name="FundCommitteId" DataType="System.Int32"/>
+        <Column Name="MemberId" DataType="System.Int32"/>
+        <Column Name="StartDate" DataType="System.DateTime"/>
+        <Column Name="EndDate" DataType="System.DateTime"/>
+        <Column Name="IsActive" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="IsInitial" DataType="System.Boolean" BindableControl="CheckBox"/>
+        <Column Name="MemberPosition" DataType="System.String"/>
+        <Column Name="MemberPositionId" DataType="System.Int32"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+    <Relation Name="Fund_FundCommittee" ParentDataSource="Fund" ChildDataSource="FundCommittee" ParentColumns="FundId" ChildColumns="FundId" Enabled="true"/>
+    <Relation Name="FundCommittee_FundCommitteeMember" ParentDataSource="FundCommittee" ChildDataSource="FundCommitteeMember" ParentColumns="FundCommitteeId" ChildColumns="FundCommitteId" Enabled="true"/>
+    <Relation Name="FundCommitteeMember_Member" ParentDataSource="FundCommitteeMember" ChildDataSource="Member" ParentColumns="MemberId" ChildColumns="MemberId" Enabled="true"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="56.7" Top="9.45" Width="94.5" Height="18.9" Text="TEst Titel" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text4" Left="198.45" Width="94.5" Height="18.9" Text="FundId" Font="Arial, 10pt"/>
+      <TextObject Name="Text6" Left="321.3" Width="94.5" Height="18.9" Text="FundName" Font="Arial, 10pt"/>
+      <TextObject Name="Text8" Left="85.05" Width="94.5" Height="18.9" Text="StartDate" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="217.35" DataSource="Fund">
+      <RichObject Name="Rich1" Left="75.6" Top="75.6" Width="567" Height="122.85" Text="{\rtf1\ansi\ansicpg1253\deff0\nouicompat\deflang1032{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset161 Tahoma;}}&#13;&#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &#13;&#10;\pard\b\fs16\lang1033 Helllo \b0\fs20  Mr [Fund.FundName]   \b Pambos\par&#13;&#10;What the \par&#13;&#10;\b0\f1\fs17\lang1032\par&#13;&#10;}&#13;&#10;"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="295.5" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

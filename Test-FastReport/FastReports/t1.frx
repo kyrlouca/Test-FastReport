@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/31/2023 19:10:09" ReportInfo.Modified="03/31/2023 19:12:34" ReportInfo.CreatorVersion="2023.2.4.0">
+  <Dictionary>
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDa4Bj1w0R+JVKKm6iyXMeCF2g+eoWw/im8Cuk3bV1ojmVa4yFm9VN0eeOyuFQ5CfUQ7J9A97h1WkiZdCN629U9ZmPXG85Ho60sp+9FTdZAQ1F">
+      <TableDataSource Name="Product" DataType="System.Int32" Enabled="true" TableName="Product">
+        <Column Name="productId" DataType="System.Int32"/>
+        <Column Name="productName" DataType="System.String"/>
+        <Column Name="price" DataType="System.Decimal"/>
+        <Column Name="productCategoryId" DataType="System.Int32"/>
+      </TableDataSource>
+      <TableDataSource Name="ProductCategory" DataType="System.Int32" Enabled="true" TableName="ProductCategory">
+        <Column Name="ProductCategoryId" DataType="System.Int32"/>
+        <Column Name="CategoryName" DataType="System.String"/>
+      </TableDataSource>
+    </MsSqlDataConnection>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
+      <TextObject Name="Text1" Left="18.9" Top="18.9" Width="94.5" Height="18.9" Font="Arial, 10pt"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
+      <TextObject Name="Text3" Left="28.35" Width="94.5" Height="18.9" Text="ProductCategoryId" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="189" Width="94.5" Height="18.9" Text="CategoryName" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="ProductCategory">
+      <TextObject Name="Text2" Left="28.35" Top="9.45" Width="94.5" Height="18.9" Text="[ProductCategory.ProductCategoryId]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="189" Top="9.45" Width="94.5" Height="18.9" Text="[ProductCategory.CategoryName]" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>
