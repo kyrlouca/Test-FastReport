@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="04/10/2023 12:04:43" ReportInfo.Modified="04/10/2023 12:08:09" ReportInfo.CreatorVersion="2023.2.4.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/10/2023 12:04:43" ReportInfo.Modified="04/10/2023 14:08:39" ReportInfo.CreatorVersion="2023.2.4.0">
   <Dictionary>
-    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDa4Bj1w0R+JVKKm6iyXMeCF1ZJqiNmIoOUcYmUJNftwc1GhOlQR8lSfGgH5E9CIimWFf/zhKfCgGoq2zXFqmZ0XZds6wItXl7Rl0Ryq2jP5+ldvMuCCjOAo9Ir2opurF3EQ==">
+    <MsSqlDataConnection Name="Connection" ConnectionString="rijcmlq/zVpGdLu4Rs/zhY2tTaG88DcXv+ubSMex/OkHhk0Y5mV5d9f3YeWUKVInhw4cFQnYP3g5947043h8mx2ceIDa4lxVTTZt/NO5YCf74W1WP1bXr6EEmj2EXvxtnSd1O9T375mGRcXRwWdmtsSFOlAGjy1CZLYopkQ3fVESp3aopM0qHSaNflMsqaR2jkPfvhnGug3i4Nf0Lm69OzzG/mCTw==">
       <TableDataSource Name="Product" DataType="System.Int32" Enabled="true" TableName="Product">
         <Column Name="productId" DataType="System.Int32"/>
         <Column Name="productName" DataType="System.String"/>
@@ -13,12 +13,13 @@
   <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
     <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="37.8">
       <TextObject Name="Text1" Left="945" Text="[Product.productName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text4" Left="945" Text="[Product.productName]" Font="Arial, 10pt"/>
     </ReportTitleBand>
     <PageHeaderBand Name="PageHeader1" Top="41.8" Width="718.2" Height="28.35">
-      <TextObject Name="Text3" Left="141.75" Width="94.5" Height="18.9" Text="productName" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Left="37.8" Width="94.5" Height="18.9" Text="productName" Font="Arial, 10pt"/>
     </PageHeaderBand>
     <DataBand Name="Data1" Top="74.15" Width="718.2" Height="75.6" DataSource="Product">
-      <TextObject Name="Text2" Left="141.75" Top="18.9" Width="94.5" Height="18.9" Text="[Product.productName]" Font="Arial, 10pt"/>
+      <TextObject Name="Text5" Left="141.75" Top="9.45" Width="94.5" Height="18.9" Text="[Product.productName]" Font="Arial, 10pt"/>
     </DataBand>
     <PageFooterBand Name="PageFooter1" Top="153.75" Width="718.2" Height="18.9"/>
   </ReportPage>
