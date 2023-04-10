@@ -13,10 +13,12 @@
 @code {
 	private WebReport MyWebReport { get; set; } = new WebReport();
 
-	private string connectionName = @"Data Source=KYR-RYZEN\SQLEXPRESS;AttachDbFilename=;Initial Catalog=Eforos;Integrated Security=True;Persist Security Info=False;User ID= Tester;Password= fuckinga";
+	
+	private string connectionName = @"Data Source=KYR-RYZEN\SQLEXPRESS;AttachDbFilename=;Initial Catalog=test;Integrated Security=False;Persist Security Info=True;User ID=Tester4;Password=tester4";
+
 	protected override void OnParametersSet()
-	{
-		var reportName = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\t1.frx";
+	{		
+		var reportName = @"wwwroot\tester4.frx";
 		FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
 		var report = Report.FromFile(reportName);
 	
@@ -26,17 +28,8 @@
 		report.Dictionary.Connections.Add(conn);
 		conn.CreateAllTables();
 
-		//report.SetParameterValue("CONN", conn);
-		//Dictionary<string, string> parameterList = new Dictionary<string, string>();
-		//parameterList.Add("CONN", conn.ToString());
-		//foreach (var item in parameterList)
-		//{
-		//	report.SetParameterValue(item.Key, item.Value);
-		//}
 
 		MyWebReport.Report = report;
-
-
 		
 
 	}
