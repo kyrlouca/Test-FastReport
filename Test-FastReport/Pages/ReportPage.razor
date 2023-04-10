@@ -1,6 +1,9 @@
 ﻿@page "/report"
 @using FastReport;
 @using FastReport.Data;
+@using FastReport.Web
+@using FastReport.Web.Blazor.Components
+@using FastReport.Web.Blazor.Components.Internal
 
 
 <h3>ReportPage</h3>
@@ -10,34 +13,24 @@
 @code {
 	private WebReport MyWebReport { get; set; } = new WebReport();
 
-	private string connectionName = @"Data Source=KYR-RYZEN\SQLEXPRESS;AttachDbFilename=;Initial Catalog=Eforos;Integrated Security=True;Persist Security Info=False;User ID= Tester;Password= fuckinga";
+	
+	private string connectionName = @"Data Source=KYR-RYZEN\SQLEXPRESS;AttachDbFilename=;Initial Catalog=test4;Integrated Security=False;Persist Security Info=True;User ID=Tester4;Password=tester4";
+
 	protected override void OnParametersSet()
 	{
-		 var reportName = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\x3.frx";
+		var reportName = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\x3.frx";
 		FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
-
-		//Report report = new Report();
-		//report.Load(reportName);
-
 		var report = Report.FromFile(reportName);
-		//Report.RegisterData(DataSet, "NorthWind");
+	
 
 		MsSqlDataConnection conn = new MsSqlDataConnection();
-		conn.ConnectionString = connectionName;		
+		conn.ConnectionString = connectionName;
 		report.Dictionary.Connections.Add(conn);
 		conn.CreateAllTables();
 
-		report.SetParameterValue("CONN", conn);
-		Dictionary<string, string> parameterList = new Dictionary<string, string>();
-		parameterList.Add("CONN", conn.ToString());
-		foreach(var item in parameterList)
-		{
-			report.SetParameterValue(item.Key,item.Value);
-		}
-		
 
 		MyWebReport.Report = report;
-
+		
 
 	}
 }
