@@ -18,10 +18,10 @@
 
 	protected override void OnParametersSet()
 	{
-		var reportName = @"C:\Users\kyrlo\soft\blazor\Test-FastReport\Test-FastReport\FastReports\x3.frx";
+		var reportName = @"wwwroot\tester4.frx";
 		FastReport.Utils.RegisteredObjects.AddConnection(typeof(MsSqlDataConnection));
 		var report = Report.FromFile(reportName);
-	
+
 
 		MsSqlDataConnection conn = new MsSqlDataConnection();
 		conn.ConnectionString = connectionName;
